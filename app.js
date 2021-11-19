@@ -6,27 +6,27 @@ const seedDB = require('./database/utils/seedDB');
 const express = require("express");
 const app = express();
 
-//our database instance
+// Our database instance
 const db = require('./database');
 
-//express router
+// Express router
 const apiRouter = require('./routes/index');
 
 
 const syncDatabase = async () => {
-  //sync and seed
+  // Sync and seed
   try {
-    await db.sync({force: true});
-    console.log('------Synced to db--------')
-    await seedDB();
+    await db.sync({force: true}); // TO-DO: Remove {force: true} when project is complete
+    console.log('------Synced to db--------');
+    await seedDB(); // TO-DO: Remove seedDB() when project is complete
     console.log('--------Successfully seeded db--------');
   } catch (err) {
     console.error('syncDB error:', err);
-  }  
+  }
 }
 
 const configureApp = async () => {
-  // handle request data
+  // Handle request data
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
 
@@ -35,14 +35,14 @@ const configureApp = async () => {
 
   // Handle page not found:
   // gets triggered when a request is made to
-  // an undefined route 
+  // an undefined route
   app.use((req, res, next) => {
     const error = new Error("Not Found, Please Check URL!");
     error.status = 404;
     next(error);
   });
 
-  // Error-handling middleware: 
+  // Error-handling middleware:
   // all express errors get passed to this
   // when next(error) is called
   app.use((err, req, res, next) => {
