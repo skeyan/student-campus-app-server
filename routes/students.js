@@ -43,7 +43,7 @@ router.post('/', function(req, res, next) {
     .catch(err => next(err));
 });
 
-/** DELETE STUDENT */
+/** DELETE STUDENT BY ID */
 router.delete('/:id', function(req, res, next) {
   Student.destroy({
     where: {
@@ -54,7 +54,7 @@ router.delete('/:id', function(req, res, next) {
     .catch(err => next(err));
 });
 
-/******************* EDIT *********************/
+/* EDIT STUDENT BY ID */
 
 router.put('/:id', ash(async(req, res) => {
   await Student.update(req.body,
@@ -64,5 +64,5 @@ router.put('/:id', ash(async(req, res) => {
   res.status(201).json(student);
 }));
 
-// Export our router, so that it can be imported to construct our apiRouter;
+/* Export our router, so that it can be imported to construct our apiRouter */
 module.exports = router;
