@@ -4,7 +4,8 @@ const db = require('../db');
 const Campus = db.define("campus", {
   name: {
     type: Sequelize.STRING,
-    allowNull: false
+    allowNull: false,
+    notEmpty: true
   },
 
   description: {
@@ -13,12 +14,14 @@ const Campus = db.define("campus", {
 
   address: {
     type: Sequelize.STRING,
-    allowNull: false
+    allowNull: false,
+    notEmpty: true
   },
 
   imageUrl: {
     type: Sequelize.STRING,
-    defaultValue: "https://i.imgur.com/U0xAFnj.png"
+    defaultValue: "https://i.imgur.com/U0xAFnj.png",
+    validate:{ isUrl: true }
   }
 });
 
