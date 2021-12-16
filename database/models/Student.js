@@ -6,13 +6,11 @@ const Student = db.define("student", {
   firstname: {
     type: Sequelize.STRING,
     allowNull: false,
-    notEmpty: true
   },
 
   lastname: {
     type: Sequelize.STRING,
     allowNull: false,
-    notEmpty: true
   },
 
   imageUrl: {

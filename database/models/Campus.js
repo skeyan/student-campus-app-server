@@ -5,7 +5,6 @@ const Campus = db.define("campus", {
   name: {
     type: Sequelize.STRING,
     allowNull: false,
-    notEmpty: true
   },
 
   description: {
@@ -15,7 +14,6 @@ const Campus = db.define("campus", {
   address: {
     type: Sequelize.STRING,
     allowNull: false,
-    notEmpty: true
   },
 
   imageUrl: {
