@@ -16,6 +16,12 @@ const seedDB = async () => {
 		description: "This is a school in MA.",
 		address: "Cambridge, MA"
 	});
+	const dummy_campus4 = await Campus.create({
+		name: "LOREM_IPSUM",
+		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure .",
+		address: "Virginia, VA",
+		imageUrl: "https://i.imgur.com/uYlV5.jpg"
+	});
 	
 	const dummy_student = await Student.create({
 		firstname: "Joe",
