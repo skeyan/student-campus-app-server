@@ -4,7 +4,7 @@ const db = require('../db');
 const Campus = db.define("campus", {
   name: {
     type: Sequelize.STRING,
-    allowNull: false,
+    allowNull: false
   },
 
   description: {
@@ -13,7 +13,7 @@ const Campus = db.define("campus", {
 
   address: {
     type: Sequelize.STRING,
-    allowNull: false,
+    allowNull: false
   },
 
   imageUrl: {
